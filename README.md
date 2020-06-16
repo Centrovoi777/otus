@@ -1,4 +1,5 @@
-<details>Урок №5
+<details>
+  <summary> Урок №5 </summary>
 setupvpn.sh
 
 cat <<EOF> setupvpn.sh
