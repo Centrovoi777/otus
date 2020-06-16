@@ -23,6 +23,6 @@ $ sudo bash setupvpn.sh <br>
 ```
 После установки открываем ссылку в браузере "https://Ip-address/setup" <br>
 Далее следуем инструкциям <br><br>
-Инструкция по добавлению пользователей и серверов https://docs.pritunl.com/docs/connecting <br>
+[Инструкция по добавлению пользователей и серверов](https://docs.pritunl.com/docs/connecting) <br>
 </details>
 </details>
