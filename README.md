@@ -12,3 +12,4 @@ apt-get --assume-yes install pritunl mongodb-org
 systemctl start pritunl mongod
 systemctl enable pritunl mongod
 EOF
+
