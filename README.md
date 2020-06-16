@@ -1,3 +1,4 @@
+<summary>Урок №5</summary> == $0
 setupvpn.sh
 
 cat <<EOF> setupvpn.sh
