@@ -1,4 +1,4 @@
-<summary>Урок №5</summary> == $0
+<details>Урок №5
 setupvpn.sh
 
 cat <<EOF> setupvpn.sh
@@ -14,3 +14,4 @@ systemctl start pritunl mongod
 systemctl enable pritunl mongod
 EOF
 
+</details>
