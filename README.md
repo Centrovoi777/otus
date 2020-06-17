@@ -25,4 +25,6 @@ $ sudo bash setupvpn.sh <br>
 Далее следуем инструкциям <br><br>
 [Инструкция по добавлению пользователей и серверов](https://docs.pritunl.com/docs/connecting) <br>
 </details>
+переход по ssh по ключам
+ssh -i ~/.ssh/appuser appuser@<ipaddress>
 </details>
