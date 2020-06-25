@@ -1,4 +1,31 @@
-<details>
+
+<details> 
+ <summary> авторизация по ssh </summary> 
+для подключения создаем файл 
+
+```
+  $ nano ~/.ssh/autorized-keys
+ ```
+  добавляем ключ в 1 строчку без кавычек
+```
+"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAqTqqZJDbs2iDZQPRXJ4jdVaeJX4nyX9Cmw8RMecY+z51VcZNyFuHUC9RHGaoS4WUz3iBCHRnootaFKhbiLNEWs0Nr+qQlN4waoSo1Y9sAtI+1DTIxGWePMglTuu4CjvHFKV1UStcU//iuvvSuYXMltopoEjUuz6qxfZHY4OztcZ5YnOU+q1NlCckEvfZmE/ZR6+MZ+DjtvoUtERNjyjnBF8kIK86UDBTSWIrVZ/b/8ZLL7gA9Px2Ri0X5NqtrZ/ZVBWuVgHJ0ktaG/opq7ywMNyWbvBLiYfS3po54jl9bxxAyDSMuN4dO1NI0BVCgTOnesth28RkXtSpq8WTwvgd6w=="  
+```
+даем права на файл 
+```
+chmod 700 /home/user_name/.ssh && chmod 600 /home/user_name/.ssh/authorized_keys
+chown -R username:username /home/username/.ssh
+```  
+изменяем файл 
+```
+nano /etc/ssh/sshd_config
+```
+меняем PubkeyAutehentivation yes, раскоментируем AuthorazedKeysFile .ssh/authorized_keys отключаем аутентификацию по паролю PasswordAuthentication no <br>
+перезапускаем службу
+```
+sudu systemctl restart ssh
+```
+</details>
+<details>   
   <summary> Урок №5 </summary>
     <details> <summary> setupvpn.sh установка OVPN сервера prinunl </summary>
      
@@ -19,7 +46,7 @@ systemctl enable pritunl mongod <br>
 EOF <br>
 ```  
 ```sh
-$ sudo bash setupvpn.sh <br>
+$ sudo bash setupvpn.sh
 ```
 После установки открываем ссылку в браузере "https://Ip-address/setup" <br>
 Далее следуем инструкциям <br><br>
