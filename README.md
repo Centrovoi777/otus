@@ -60,8 +60,9 @@ ssh -i ~/.ssh/appuser appuser@<ipaddress>
  созданы скрипты bash, для установки mongodb, ruby, puma-server
  
 создан бакет > инструкция по бакетам  https://gist.github.com/Nklya/b6d1a547415b123f6b0cd0e90d208bf8 
+
 создание инстанса по скрипту
-
+```sh
 gcloud compute instances create reddit-app1 --boot-disk-size=10GB --image-family ubuntu-1604-lts --image-project=ubuntu-os-cloud --machine-type=g1-small --tags puma-server --restart-on-failure --scopes storage-ro --metadata startup-script-url=gs://tartup-script-url/startupscript.sh
-
+```
  </details>
