@@ -1,0 +1,4 @@
+#!/bin/bash
+if [ -f $HOME/.bashrc1 ]; then 
+echo "Файл существует!"
+fi
