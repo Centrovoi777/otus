@@ -66,3 +66,15 @@ ssh -i ~/.ssh/appuser appuser@<ipaddress>
 gcloud compute instances create reddit-app1 --boot-disk-size=10GB --image-family ubuntu-1604-lts --image-project=ubuntu-os-cloud --machine-type=g1-small --tags puma-server --restart-on-failure --scopes storage-ro --metadata startup-script-url=gs://tartup-script-url/startupscript.sh
 ```
  </details>
+   <details>
+ <summary> Урок №7 </summary>
+ Установлен Packer https://www.packer.io/downloads.html
+ 
+ и подключен к gcloud
+ ```sh
+ gcloud auth application-default login
+ ```
+ Создана ветка packer-base добавлен файл сборки ubuntu16.json
+ 
+ 
+   </details>
