@@ -81,6 +81,34 @@ gcloud compute instances create reddit-app1 --boot-disk-size=10GB --image-family
  packer validate ./ubuntu16.json
   ```
  
- Задание №1
+Самостоятельное задание №1, №2 и №3
+
+Добавление файла variables.json добавлен в исключения для git,
+
+проверка для обоих файлов сразу 
+ ```sh
+ packer validate -var-file ./variables.json ./ubuntu16.json
+  ```
+  
+  Пример вынесения в файл variables.json:
+  
+В файле шаблона ubuntu16.json
+ ```sh
+  "variables":
+  {
+  "project_id": "null",
+  },
+	"builders": [
+    {
+	"project_id": "{{ user `project_id` }}"
+	}
+ ```
+В файле variables.json 
+  ```sh	
+  {
+  "project_id": "наш проект"
+  }  
+  ```
+ Добавил опции размера диска "disk_size": "10" и теги для брандмауэра "tags": "puma-server"
  
    </details>
