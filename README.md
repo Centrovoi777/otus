@@ -76,5 +76,11 @@ gcloud compute instances create reddit-app1 --boot-disk-size=10GB --image-family
  ```
  Создана ветка packer-base добавлен файл сборки ubuntu16.json
  
+ Проведена проверка файла
+ ```sh
+ packer validate ./ubuntu16.json
+  ```
+ 
+ Задание №1
  
    </details>
