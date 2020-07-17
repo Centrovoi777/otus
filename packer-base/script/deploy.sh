@@ -5,4 +5,3 @@ cd reddit && bundle install
 puma -d
 echo 'смотрим какой порт слушает puma'
 ps aux | grep puma
-systemctl enable puma
