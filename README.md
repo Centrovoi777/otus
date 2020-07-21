@@ -59,6 +59,9 @@ ssh -i ~/.ssh/appuser appuser@<ipaddress>
 <summary> Урок №6 </summary>
  созданы скрипты bash, для установки mongodb, ruby, puma-server
  
+ делаем файлы исполняемыми chmod +x /install_mongoDB.sh
+ chown -R username:username /install_mongoDB.sh
+ 
 создан бакет > инструкция по бакетам  https://gist.github.com/Nklya/b6d1a547415b123f6b0cd0e90d208bf8 
 
 создание инстанса по скрипту
@@ -89,7 +92,11 @@ gcloud compute instances create reddit-app1 --boot-disk-size=10GB --image-family
  ```sh
  packer validate -var-file ./variables.json ./ubuntu16.json
   ```
-  
+
+сборка шаблона
+  ```sh
+packer build -var-file ./variables.json ./ubuntu16.json 
+  ```
   Пример вынесения в файл variables.json:
   
 В файле шаблона ubuntu16.json
@@ -111,4 +118,9 @@ gcloud compute instances create reddit-app1 --boot-disk-size=10GB --image-family
   ```
  Добавил опции размера диска "disk_size": "10" и теги для брандмауэра "tags": "puma-server"
  
+ 
+ Задание №1 под *
+ 
+создание инстанса  из изображения
+ gcloud compute instances create test --image-family=reddit-base --image-project=api-project-739750082124
    </details>
