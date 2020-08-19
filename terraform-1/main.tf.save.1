@@ -8,28 +8,28 @@ provider "google" {
   version = "2.5.0"
 
   # ID проекта
-  project = "${var.project}"
-  region  = "${var.region}"
+  project = "api-project-739750082124"
+  region  = "europe-west1-b"
 }
 
 resource "google_compute_project_metadata" "ssh_keys" {
   metadata = {
     # путь до публичного ключа
-    ssh-keys = "centr:${file(var.public_key_centr)}\n Centr:${file(var.public_key_Centr)}" 
+    ssh-keys = "Centr:${file("~/.ssh/authorized_keys")}"
+    ssh-keys = "centr:${file("~/.ssh/id_rsa.pub")}"
   }
 }
 
 resource "google_compute_instance" "app" {
   name         = "reddit-app"
   machine_type = "g1-small"
-  zone         = "${var.zone}"
-  #  zone         = "europe-west1-b"
-  tags = ["reddit-app"]
+  zone         = "europe-west1-b"
+  tags         = ["reddit-app"]
 
   # определение загрузочного диска
   boot_disk {
     initialize_params {
-      image = "${var.disk_image}"
+      image = "reddit-base"
     }
   }
 
@@ -45,23 +45,22 @@ resource "google_compute_instance" "app" {
   connection {
     type    = "ssh"
     user    = "centr"
-    host    = "${google_compute_instance.app.network_interface[0].access_config[0].nat_ip}"
+#    password = "23071992"
+    host    = "35.205.186.168"
     agent   = false
     timeout = "2m"
     # путь до приватного ключа
-    private_key = "${file(var.private_key_path)}"
-    #    private_key = file("~/.ssh/id_rsa")
+#    private_key = file("~/.ssh/Centr")
+    private_key = file("~/.ssh/id_rsa")
   }
   provisioner "file" {
-    source      = "files/puma.service"
+    source      = "~/otus/terraform-1/files/puma.service"
     destination = "/tmp/puma.service"
   }
-
-  provisioner "remote-exec" {
-    script = "files/deploy.sh"
-  }
 }
-
+  provisioner "remote-exec" {
+script = "files/deploy.sh"
+}
 
 
 resource "google_compute_firewall" "firewall_puma" {
