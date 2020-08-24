@@ -20,3 +20,19 @@ description = "api-project-739750082124"
  variable disk_image {
   description = "reddit-base"
 }
+ variable public_key_centr {
+  # Описание переменной
+   description = "~/.ssh/centr.pub"
+}
+ variable public_key_Centr {
+  # Описание переменной
+   description = "~/.ssh/authorized_keys"
+}
+variable app_disk_image {
+  description = "Disk image for reddit app"
+  default = "reddit-app-base"
+}
+variable db_disk_image {
+  description = "Disk image for reddit db"
+  default = "reddit-db-base"
+}
