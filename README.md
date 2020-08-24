@@ -124,3 +124,37 @@ packer build -var-file ./variables.json ./ubuntu16.json
 создание инстанса  из изображения
  gcloud compute instances create test --image-family=reddit-base --image-project=api-project-739750082124
    </details>
+   
+   <details>
+ <summary> Урок №8 </summary>
+ установил версию выше чем 0.11.11, версию 0.12.28
+ Пример коннектора к виртуальной машине (отличается от 0.11.11
+
+```sh
+   connection {
+    type    = "ssh"
+    user    = "centr"
+    host    = "${google_compute_instance.app.network_interface[0].access_config[0].nat_ip}"
+    agent   = false
+    timeout = "2m"
+    # путь до приватного ключа
+    private_key = "${file(var.private_key_path)}"
+```
+основные команды
+
+```sh
+ terraform plan
+ terraform apply
+ 
+```
+добавление двух ключей ssh
+```sh
+resource "google_compute_project_metadata" "ssh_keys" {
+  metadata = {
+    # путь до публичного ключа
+    ssh-keys = "centr:${file(var.public_key_centr)}\n Centr:${file(var.public_key_Centr)}"
+  }
+}
+
+```
+ </details>
