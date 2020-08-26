@@ -17,12 +17,12 @@ variable public_key_path {
 variable private_key_path {
   description = "~/.ssh/id_rsa"
 }
-variable disk_image {
-  description = "reddit-base"
-}
+#variable disk_image {
+#  description = "reddit-base"
+#}
 variable public_key_centr {
   # Описание переменной
-  description = "~/.ssh/centr.pub"
+  description = "~/.ssh/Centr.pub"
 }
 variable public_key_Centr {
   # Описание переменной

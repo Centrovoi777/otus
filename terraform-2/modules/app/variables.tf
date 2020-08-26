@@ -1,12 +1,12 @@
- variable public_key_path {
+variable public_key_path {
   # Описание переменной
-   description = "~/.ssh/id_rsa.pub"
+  description = "~/.ssh/id_rsa.pub"
 }
- variable zone {
+variable zone {
   description = "zone"
-  default = "europe-west1-b"
+  default     = "europe-west1-b"
 }
 variable app_disk_image {
   description = "Disk image for reddit app"
-  default = "reddit-app-base"
+  default     = "reddit-app-base"
 }

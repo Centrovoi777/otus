@@ -1,10 +1,12 @@
 provider "google" {
   # Версия провайдера
-  version = "2.5.0"
+  version = "3.5.0"
 
   # ID проекта
-  project = "${var.project}"
-  region  = "${var.region}"
+  #  project = "api-project-739750082124"
+  project = var.project
+  region  = var.region
+  #  region = "europe-west1"
 }
 
 module "app" {
