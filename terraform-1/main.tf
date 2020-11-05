@@ -14,8 +14,9 @@ provider "google" {
 
 resource "google_compute_project_metadata" "ssh_keys" {
   metadata = {
-    # путь до публичного ключа
-    ssh-keys = "centr:${file(var.public_key_centr)}\n Centr:${file(var.public_key_Centr)}" 
+    # путь до публичного ключа 
+ssh-keys = "centr:${file("~/.ssh/id_rsa.pub")}\n Centr:${file("~/.ssh/authorized_keys")}"
+#    ssh-keys = "centr:${file(var.public_key_centr)}\n Centr:${file(var.public_key_Centr)}" 
   }
 }
 
