@@ -1,0 +1,9 @@
+---
+plugin: gcp_compute
+projects:
+ - "api-project-739750082124"
+zones:
+ - "europe-west1-b"
+filters: []
+auth_kind: otus
+service_account_file: "home/otus/GCPkey/project.json"

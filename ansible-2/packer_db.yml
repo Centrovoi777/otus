@@ -1,0 +1,33 @@
+---
+- name: Install MongoDB 3.2
+  hosts: test
+  become: true
+  tasks:
+  # Добавляем ключ репозитория для последующей работы с ним
+  - name: Update and upgrade apt packages
+    apt:
+      upgrade: yes
+      update_cache: yes
+      cache_valid_time: 86400 
+  - name: Add APT key
+    apt_key: 
+      id: EA312927
+      keyserver: keyserver.ubuntu.com
+  
+  # Подключаем репозиторий с пакетами monfodb
+  - name: Add APT repository
+    apt_repository: 
+      repo: deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse 
+      mode: 666
+      state: present
+  
+  # Выполняем установку пакета
+  - name: Install mongodb package
+    apt: 
+      name: mongodb-org 
+      state: present      
+
+  - name: Configure service inspector
+    systemd: 
+      name: mongod
+      enabled: yes

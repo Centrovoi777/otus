@@ -1,0 +1,8 @@
+plugin: gcp_compute
+projects:
+ - "api-project-739750082124"
+#auth_kind: serviceaccount
+#service_account_file: /home/alexstephen/my_account.json
+auth_kind: otus
+service_account_file: "~/GCPkey/project.json"
+

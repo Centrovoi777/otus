@@ -1,4 +1,5 @@
 output "app_external_ip" {
+  #  value = "${google_compute_address.reddit-app-ip.address}"
   value = "${module.app.app_external_ip}"
 }
 output "app_internal_ip" {
