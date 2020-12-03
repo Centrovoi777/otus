@@ -158,3 +158,14 @@ resource "google_compute_project_metadata" "ssh_keys" {
 
 ```
  </details>
+   <details>
+    <summary> Урок №11 </summary>
+	Собрали шаблон инстанса в packer
+	
+packer build -var-file packer-base/variables.json packer-base/ubuntu16.json
+
+Создали инстансы в terraform
+
+/terraform-2/stage$ terraform apply
+
+  </details>
