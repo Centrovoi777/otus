@@ -168,4 +168,10 @@ packer build -var-file packer-base/variables.json packer-base/ubuntu16.json
 
 /terraform-2/stage$ terraform apply
 
+в app.yml поменять db_host на новый IP server_db
+
+в конце выполнить 
+
+ansible-playbook site.yml -u centr
+
   </details>
